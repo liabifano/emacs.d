@@ -7,6 +7,7 @@
 ;;; Code:
 
 ;; Produce backtraces when errors occur
+
 (setq debug-on-error t)
 
 (let ((minver "24.4"))
@@ -49,9 +50,15 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+(require-package 'wgrep)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
+(require-package 'magit)
+(require-package 'google-this)
+(require-package 'elpy)
+;; (require-package 'org-bullets)
+;; (require-package 'org-journal)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -68,7 +75,7 @@
 (require 'init-recentf)
 (require 'init-smex)
 (require 'init-ivy)
-;;(require 'init-helm)
+;; (require 'init-helm)
 (require 'init-hippie-expand)
 (require 'init-company)
 (require 'init-windows)
@@ -88,7 +95,6 @@
 (require 'init-compile)
 ;;(require 'init-crontab)
 (require 'init-textile)
-(require 'init-markdown)
 (require 'init-csv)
 (require 'init-erlang)
 (require 'init-javascript)
@@ -126,6 +132,8 @@
 
 (require 'init-misc)
 
+(require 'init-markdown)
+
 (require 'init-folding)
 (require 'init-dash)
 
@@ -147,7 +155,6 @@
 (when (maybe-require-package 'uptimes)
   (setq-default uptimes-keep-count 200)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
-
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
@@ -175,6 +182,12 @@
 ;; Allow users to provide an optional "init-local" containing personal settings
 ;;----------------------------------------------------------------------------
 (require 'init-local nil t)
+(require 'init-markdown nil t)
+;; (require 'init-journal)
+(require 'init-el-get nil t)
+(require 'init-shell nil t)
+(require 'init-multi-term nil t)
+;; (require 'init-ein nil t)
 
 
 
