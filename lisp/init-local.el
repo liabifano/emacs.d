@@ -1,5 +1,7 @@
 ;;; Code:
 
+(exec-path-from-shell-copy-env "PYTHONPATH")
+
 ;;; line number
 (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'org-mode-hook 'org-bullets-mode)
@@ -18,8 +20,8 @@
 ;;; keys
 (global-set-key (kbd "M-v") 'cua-paste)
 (global-set-key (kbd "M-c") 'cua-copy-region)
-(global-set-key (kbd"C-c p r") 'run-python)
-(global-set-key (kbd "C-x C-g") 'google-this)
+(global-set-key (kbd"C-c r") 'run-python)
+(global-set-key (kbd "C-c C-g") 'google-this)
 (global-set-key (kbd "C-x c") 'kill-some-buffers)
 (global-set-key (kbd "C-c p n") 'ein:jupyter-server-start)
 (global-set-key (kbd "C-c p k") 'ein:jupyter-server-stop)

@@ -105,6 +105,8 @@
 (require 'init-css)
 (require 'init-haml)
 (require 'init-http)
+(setq python-environment-virtualenv '("/Users/lia/miniconda3/bin/python"))
+(setq python-shell-interpreter "/Users/lia/miniconda3/bin/python")
 (require 'init-python)
 (require 'init-haskell)
 (require 'init-elm)
@@ -183,7 +185,7 @@
 ;;----------------------------------------------------------------------------
 (require 'init-local nil t)
 (require 'init-markdown nil t)
-;; (require 'init-journal)
+(require 'init-journal)
 (require 'init-el-get nil t)
 (require 'init-shell nil t)
 (require 'init-multi-term nil t)
